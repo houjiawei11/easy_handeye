@@ -83,4 +83,5 @@ class HandeyeServer:
     def save_calibration(self, _):
         if self.last_calibration:
             self.last_calibration.to_file()
+            rospy.loginfo('Calibration saved to {}'.format(self.last_calibration.filename))
         return std_srvs.srv.EmptyResponse()
